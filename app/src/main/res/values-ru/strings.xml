@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_title">Пример сложения двух чисел</string>
+    <string name="first_digit">первое число:</string>
+    <string name="second_digit">второе число:</string>
+    <string name="action">операция:</string>
+    <string name="result">результат:</string>
+</resources>
