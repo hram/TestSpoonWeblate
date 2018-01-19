@@ -27,6 +27,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     androidTestImplementation "com.squareup.spoon:spoon-client:2.0.0-SNAPSHOT"
+    androidTestImplementation 'de.schroepf:android-xml-run-listener:0.2.2'
 }
 
 spoon {
@@ -81,6 +82,7 @@ spoon {
         singleInstrumentationCall = project.spoonSingleInstrumentationCall
     }
 
-    testSize = "SMALL"
-    singleInstrumentationCall = true
+    //testSize = "SMALL"
+    instrumentationArgs = ['package:hram.testspoon.package1']
+    singleInstrumentationCall = false
 }
