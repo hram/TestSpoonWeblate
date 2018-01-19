@@ -2,4 +2,5 @@
 <resources>]
 <string name="first_digit">first number:</string>
     <string name="second_digit">second number:</string>
+    <string name="action">operation:</string>
     </resources>
