@@ -76,4 +76,11 @@ spoon {
     if (project.hasProperty('spoonTestSize')) {
         testSize = project.spoonTestSize
     }
+
+    if (project.hasProperty('spoonSingleInstrumentationCall')) {
+        singleInstrumentationCall = project.spoonSingleInstrumentationCall
+    }
+
+    testSize = "SMALL"
+    singleInstrumentationCall = true
 }

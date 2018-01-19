@@ -1,7 +1,7 @@
 package hram.testspoon.package1;
 
 import android.content.Intent;
-import android.support.test.filters.MediumTest;
+import android.support.test.filters.SmallTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -27,7 +27,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-@MediumTest
+@SmallTest
 public class Test2 extends BaseTest {
 
     @Rule
