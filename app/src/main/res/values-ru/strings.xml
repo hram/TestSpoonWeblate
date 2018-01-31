@@ -4,5 +4,6 @@
     <string name="first_digit">первое число:</string>
     <string name="second_digit">второе число:</string>
     <string name="action">операция:</string>
+    <string name="action_line">действие:</string>
     <string name="result">результат:</string>
 </resources>
