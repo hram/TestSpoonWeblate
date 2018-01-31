@@ -5,4 +5,5 @@
     <string name="action">operation:</string>
     <string name="screen_title">Adding numbers example</string>
     <string name="result">result:</string>
-</resources>
+<string name="action_line">result:</string>
+    </resources>
