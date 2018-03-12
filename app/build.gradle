@@ -82,7 +82,7 @@ spoon {
         singleInstrumentationCall = project.spoonSingleInstrumentationCall
     }
 
-    //testSize = "SMALL"
-    instrumentationArgs = ['package:hram.testspoon.package1']
+    //testSize = "small"
     singleInstrumentationCall = false
+    //instrumentationArgs = ['package:hram.testspoon.package1']
 }
