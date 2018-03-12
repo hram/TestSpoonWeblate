@@ -3,7 +3,7 @@
 <string name="first_digit">First number:</string>
     <string name="second_digit">second number:</string>
     <string name="action">operation:</string>
-    <string name="screen_title"></string>
+    <string name="screen_title">Addition of two numbers example</string>
     <string name="result">result:</string>
 <string name="action_line">action:</string>
     </resources>
