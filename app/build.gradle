@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: "com.jaredsburrows.spoon"
+apply plugin: 'com.shazam.fork'
 
 android {
     compileSdkVersion 27
@@ -26,63 +26,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    androidTestImplementation "com.squareup.spoon:spoon-client:2.0.0-SNAPSHOT"
     androidTestImplementation 'de.schroepf:android-xml-run-listener:0.2.2'
 }
 
-spoon {
-    title = "Для проверки работы spoon"
-
-    if (project.hasProperty('spoonTitle')) {
-        title = project.spoonTitle
+fork {
+    title = "My acceptance tests"
+    fallbackToScreenshots = true
+    poolingStrategy {
+        eachDevice = true
     }
-
-    if (project.hasProperty('spoonOutput')) {
-        output = project.spoonOutput
-    }
-
-    // Test class name to run (fully-qualified).
-    if (project.hasProperty('spoonClassName')) {
-        className = project.spoonClassName
-
-        // Test method name to run (must also use className)
-        if (project.hasProperty('spoonMethodName')) {
-            methodName = project.spoonMethodName
-        }
-    }
-
-    if (project.hasProperty('spoonPackageName')) {
-        instrumentationArgs = ['package:' + project.spoonPackageName]
-    }
-
-    // Add device serials for test execution
-    if (project.hasProperty('spoonDevices')) {
-        def devicesList = []
-        project.properties['spoonDevices'].split(',').each {
-            devicesList << it
-        }
-        devices = devicesList
-    }
-
-    // Add device serials for skipping test execution
-    if (project.hasProperty('spoonSkipDevices')) {
-        def devicesList = []
-        project.properties['spoonSkipDevices'].split(',').each {
-            devicesList << it
-        }
-        skipDevices = devicesList
-    }
-
-    // Run annotated tests - small, medium, large
-    if (project.hasProperty('spoonTestSize')) {
-        testSize = project.spoonTestSize
-    }
-
-    if (project.hasProperty('spoonSingleInstrumentationCall')) {
-        singleInstrumentationCall = project.spoonSingleInstrumentationCall
-    }
-
-    //testSize = "small"
-    singleInstrumentationCall = false
-    //instrumentationArgs = ['package:hram.testspoon.package1']
 }

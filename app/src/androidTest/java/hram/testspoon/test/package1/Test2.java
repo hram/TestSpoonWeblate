@@ -1,7 +1,7 @@
-package hram.testspoon;
+package hram.testspoon.test.package1;
 
 import android.content.Intent;
-import android.support.test.filters.LargeTest;
+import android.support.test.filters.SmallTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -9,6 +9,10 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import hram.testspoon.MainActivity;
+import hram.testspoon.R;
+import hram.testspoon.test.BaseTest;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -23,8 +27,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-@LargeTest
-public class Test1 extends BaseTest {
+@SmallTest
+public class Test2 extends BaseTest {
 
     @Rule
     public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<>(MainActivity.class, true, false);
@@ -35,24 +39,24 @@ public class Test1 extends BaseTest {
     }
 
     @Test
-    public void sum_3_3() throws Exception {
+    public void sum_2_2() throws Exception {
 
         onView(withId(R.id.edit_value1))
-                .perform(typeText("3"));
+                .perform(typeText("2"));
 
-        screenshot(mRule.getActivity(), "enter3");
+        screenshot(mRule.getActivity(), "enter2plus1result2");
 
         onView(withId(R.id.edit_value2))
-                .perform(typeText("3"));
+                .perform(typeText("2"));
 
-        screenshot(mRule.getActivity(), "enter3plus3");
+        screenshot(mRule.getActivity(), "enter2plus2");
 
         onView(withId(R.id.button))
                 .perform(click());
 
-        screenshot(mRule.getActivity(), "3plus3result6");
+        screenshot(mRule.getActivity(), "2plus2result4");
 
         onView(withId(R.id.text_result))
-                .check(matches(withText("6")));
+                .check(matches(withText("4")));
     }
 }

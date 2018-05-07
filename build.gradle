@@ -5,12 +5,11 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven { url "https://oss.jfrog.org/artifactory/oss-snapshot-local/" }
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots" } // For Spoon snapshot, until 2.0.0 is released
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
-        classpath "com.jaredsburrows:gradle-spoon-plugin:1.4.1-SNAPSHOT"
+        classpath 'com.shazam.fork:fork-gradle-plugin:3.4.0-SNAPSHOT'
     }
 }
 
@@ -18,8 +17,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url "https://oss.jfrog.org/artifactory/oss-snapshot-local/" }
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots" } // For Spoon snapshot, until 2.0.0 is released
     }
 }
 

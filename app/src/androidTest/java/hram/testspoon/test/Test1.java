@@ -1,7 +1,7 @@
-package hram.testspoon.package1;
+package hram.testspoon.test;
 
 import android.content.Intent;
-import android.support.test.filters.SmallTest;
+import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -10,7 +10,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import hram.testspoon.BaseTest;
 import hram.testspoon.MainActivity;
 import hram.testspoon.R;
 
@@ -27,7 +26,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-@SmallTest
+@LargeTest
 public class Test1 extends BaseTest {
 
     @Rule
@@ -39,24 +38,24 @@ public class Test1 extends BaseTest {
     }
 
     @Test
-    public void sum_1_1() throws Exception {
+    public void sum_3_3() throws Exception {
 
         onView(withId(R.id.edit_value1))
-                .perform(typeText("1"));
+                .perform(typeText("3"));
 
-        screenshot(mRule.getActivity(), "enter1");
+        screenshot(mRule.getActivity(), "enter3");
 
         onView(withId(R.id.edit_value2))
-                .perform(typeText("1"));
+                .perform(typeText("3"));
 
-        screenshot(mRule.getActivity(), "enter1plus1");
+        screenshot(mRule.getActivity(), "enter3plus3");
 
         onView(withId(R.id.button))
                 .perform(click());
 
-        screenshot(mRule.getActivity(), "1plus1result2");
+        screenshot(mRule.getActivity(), "3plus3result6");
 
         onView(withId(R.id.text_result))
-                .check(matches(withText("2")));
+                .check(matches(withText("6")));
     }
 }
