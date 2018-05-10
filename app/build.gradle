@@ -83,6 +83,6 @@ spoon {
     }
 
     //testSize = "small"
-    singleInstrumentationCall = false
+    //singleInstrumentationCall = false
     //instrumentationArgs = ['package:hram.testspoon.package1']
 }

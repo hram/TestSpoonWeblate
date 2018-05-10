@@ -10,7 +10,6 @@ import org.junit.Rule;
 /**
  * @author Evgeny Khramov
  */
-
 public class BaseTest {
 
     @Rule
