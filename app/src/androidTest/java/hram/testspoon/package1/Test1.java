@@ -18,6 +18,7 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
@@ -34,7 +35,10 @@ public class Test1 extends BaseTest {
     }
 
     @Test
-    public void sum_1_1() throws Exception {
+    public void sum_1_1() {
+
+        onView(withText("Пример сложения двух чисел"))
+                .check(matches(isDisplayed()));
 
         onView(withId(R.id.edit_value1))
                 .perform(typeText("1"));
